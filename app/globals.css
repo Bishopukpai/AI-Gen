@@ -187,6 +187,7 @@
   background-color: #1e1e1e;
   padding: 2rem;
   border-radius: 12px;
+  color: #e0e0e0;
   border: 1px solid #333;
 }
 .result-section h2 {
@@ -206,6 +207,7 @@
   border-radius: 8px;
   font-family: "Courier New", Courier, monospace;
   line-height: 1.6;
+  color: #e0e0e0;
 }
 
 /* Loading and Error states */

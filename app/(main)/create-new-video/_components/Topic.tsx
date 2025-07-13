@@ -168,7 +168,7 @@ const Topic = ({}) => {
                      {generatedScript && (
                         <section className="result-section" aria-labelledby="script-result-heading">
                             <h2 id="script-result-heading">Your Generated Script</h2>
-                            <pre className="result-script">{generatedScript}</pre>
+                            <p className="result-script">{generatedScript}</p>
                         </section>
                     )}
                  </div>
