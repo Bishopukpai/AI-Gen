@@ -21,7 +21,7 @@ import { useAuthContext } from '@/app/Provider'
 const MenuItems = [
     {
         title: "Home",
-        url: "/dashboard",
+        url: "/",
         icon: HomeIcon
     },
     {

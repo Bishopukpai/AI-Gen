@@ -21,7 +21,14 @@ export async function POST(req: NextRequest) {
         );
     }
 
-    const prompt = `Generate a short, engaging video script for a social media video about "${topic}". The script should be suitable for a video under 60 seconds. Include scene descriptions, camera shot ideas, and a voiceover or dialogue. Format the output clearly with headings for scenes, visuals, and audio.`;
+    const prompt = `Write two different scripts for 30 seconds videos on Topic: "${topic}"
+      Give me response in JSON format and follow the schema
+      {
+      scripts{
+      }
+      content: [
+      ]
+      }`;
 
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
