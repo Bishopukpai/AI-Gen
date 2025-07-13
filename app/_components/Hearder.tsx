@@ -21,8 +21,8 @@ const Hearder = () => {
       {
         !user? <Authentication><Button className='cursor-pointer'>Get Started</Button></Authentication> : 
         <div className='flex items-center gap-3'>
-          <Link href={'/dashboard'}> 
-            <Button className='cursor-pointer'>Dashboard</Button>
+          <Link href={'/create-new-video'}> 
+            <Button className='cursor-pointer'>Create Video</Button>
           </Link>
            {user?.pictureURL && 
               <Image
