@@ -249,7 +249,7 @@
     }
 
     .suggestion-btn {
-        width: 100vw; /* Ensures buttons take full width */
+        width: 80vw; /* Ensures buttons take full width */
         margin-bottom: 8px;
     }
 
