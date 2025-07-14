@@ -234,7 +234,7 @@
 
 @media (max-width: 768px) {
     .container {
-        width: 100%;
+        width: 100vw;
         align-items: center;
     }
 
@@ -249,7 +249,7 @@
     }
 
     .suggestion-btn {
-        width: 100%; /* Ensures buttons take full width */
+        width: 100vw; /* Ensures buttons take full width */
         margin-bottom: 8px;
     }
 
