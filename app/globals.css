@@ -232,6 +232,51 @@
   border: 1px solid #ff5c5c;
 }
 
+@media (max-width: 768px) {
+    .container {
+        width: 100vw;
+        align-items: center;
+    }
+
+    
+   .border {
+    border: none;
+   }
+
+    .suggestion-buttons {
+        display: grid;
+        grid-template-columns: 2;
+    }
+
+    .suggestion-btn {
+        width: 100%; /* Ensures buttons take full width */
+        margin-bottom: 8px;
+    }
+
+    .textarea {
+        width: 100%;
+    }
+
+    .generate-btn {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* Optional styles for even smaller devices */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .header p {
+        font-size: 0.875rem;
+    }
+
+    .result-script {
+        font-size: 0.9rem; /* Reduce font size in the result section */
+    }
+}
 
 @custom-variant dark (&:is(.dark *));
 
