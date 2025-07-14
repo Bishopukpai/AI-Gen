@@ -234,7 +234,7 @@
 
 @media (max-width: 768px) {
     .container {
-        width: 100vw;
+        width: 100%;
         align-items: center;
     }
 
