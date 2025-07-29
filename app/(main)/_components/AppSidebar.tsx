@@ -13,10 +13,11 @@ import {
 } from "@/components/ui/sidebar"
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { GemIcon, HomeIcon, LucideFileVideo, Search, WalletCards } from 'lucide-react'
+import { Edit, GemIcon, HomeIcon, ImageIcon, LayoutDashboardIcon, LucideFileVideo, Video, WalletCards } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useAuthContext } from '@/app/Provider'
+import { ModeToggle } from '@/components/theme/mode-toggle'
 
 const MenuItems = [
     {
@@ -25,14 +26,29 @@ const MenuItems = [
         icon: HomeIcon
     },
     {
-        title: "Create New Video",
-        url: "/create-new-video",
+        title: "Dashboard",
+        url: "/dashboard",
+        icon: LayoutDashboardIcon
+    },
+    {
+        title: "Create Video Script",
+        url: "/create-video-script",
         icon: LucideFileVideo
     },
     {
-        title: "Explore",
-        url: "/explore",
-        icon: Search
+        title: "Edit",
+        url: "/edit",
+        icon: Edit
+    },
+    {
+        title: "Generate Video",
+        url: "/generate-video",
+        icon: Video
+    },
+    {
+        title: "Generate-Image",
+        url: "/generate-image",
+        icon: ImageIcon
     },
     {
         title: "Billings",
@@ -52,6 +68,9 @@ const AppSidebar = () => {
          <Image src={'/Visual.png'} alt='logo' width={40} height={40}/>
          <h2 className='font-bold text-2xl cursor-pointer'>Think Visuals</h2>
         </div>
+        <div className="pb-12 text-center">
+          <ModeToggle />
+        </div>
         <h3 className='text-lg text-gray-500 text-center mt-3'>AI Video Creator & Editor</h3>
         </div>
       </SidebarHeader>
@@ -59,7 +78,7 @@ const AppSidebar = () => {
         <SidebarGroup>
             <SidebarGroupContent>
                <div className='mx-5'>
-                    <Link href='/create-new-video'>  
+                    <Link href='/generate-video'>  
                         <Button className='w-full cursor-pointer'>+ Create New Video</Button>
                     </Link>
                 </div>
@@ -82,10 +101,10 @@ const AppSidebar = () => {
       <SidebarFooter>
          <div className='p-5 border rounded-lg mb-6'>
              <div className='flex items-center justify-between'>
-                <GemIcon/>
-                <h2>{user?.credits} Credits left</h2>
+                <h2>You are on</h2>
+                <h2>{user?.credits}</h2>
              </div>
-             <Button className='w-full mt-3'>Get More Credits</Button>
+             <Button className='w-full mt-3'>Upgrade Tier</Button>
          </div>
       </SidebarFooter>
     </Sidebar>

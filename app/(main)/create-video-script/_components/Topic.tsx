@@ -72,15 +72,17 @@ const Topic = ({}) => {
   return (
      <main className="container" role="main">
             <header className="header">
-                <h1>AI Video & Script Generator</h1>
+                <h1 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                    AI Script Generator
+                </h1>
                 <p>Instantly craft compelling scripts and visuals for your next viral video.</p>
             </header>
             
             <section className="form-section" aria-labelledby="form-heading">
                 <div className="form-group">
-                    <h2 id="form-heading">1. Project Title</h2>
+                    <h2 id="form-heading">Project Title (optional)</h2>
                     <input 
-                        className="input"
+                        className="mt-2 w-full border border-gray-600 rounded-lg px-4 py-3 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-shadow"
                         aria-label="Project Title"
                         placeholder="e.g., 'My Awesome Tech Channel'" 
                         value={projectTitle}
@@ -95,7 +97,7 @@ const Topic = ({}) => {
                         <div className="tabs-list" role="tablist" aria-label="Topic Selection">
                             <button 
                                 id="tab-suggestion"
-                                className="tab-trigger" 
+                                className={`px-4 py-2 text-sm font-medium transition-colors ${activeTab === 'suggestion' ? 'border-b-2 border-purple-400 text-purple-300' : 'text-gray-400 hover:text-white'}`}
                                 role="tab"
                                 aria-selected={activeTab === 'suggestion'}
                                 aria-controls="panel-suggestion"
@@ -106,7 +108,7 @@ const Topic = ({}) => {
                             </button>
                             <button 
                                 id="tab-your_topic"
-                                className="tab-trigger"
+                                className={`px-4 py-2 text-sm font-medium transition-colors ${activeTab === 'your_topic' ? 'border-b-2 border-purple-400 text-purple-300' : 'text-gray-400 hover:text-white'}`}
                                 role="tab"
                                 aria-selected={activeTab === 'your_topic'}
                                 aria-controls="panel-your_topic"
@@ -126,7 +128,7 @@ const Topic = ({}) => {
                                 {suggestions.map((suggestion) => (
                                     <button 
                                         key={suggestion} 
-                                        className={`suggestion-btn ${suggestion === topic ? 'active' : ''}`}
+                                        className={`px-3 py-1.5 text-sm rounded-full transition-all duration-200 ease-in-out ${suggestion === topic ? 'bg-purple-600 text-white shadow-md scale-105' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
                                         onClick={() => handleTopicSelection(suggestion)}
                                     >
                                         {suggestion}
@@ -141,7 +143,7 @@ const Topic = ({}) => {
                             aria-labelledby="tab-your_topic"
                             data-state={activeTab === 'your_topic' ? 'active' : 'inactive'}>
                              <textarea 
-                                className="textarea"
+                                className="w-full h-24  border border-gray-600 rounded-lg px-4 py-3 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-shadow"
                                 aria-label="Your custom topic"
                                 placeholder="e.g., A robot skateboarding on Mars, cinematic style"
                                 onChange={(e) => {
@@ -154,7 +156,7 @@ const Topic = ({}) => {
                     </div>
                 </div>
 
-                <button className="generate-btn" onClick={GenerateScript} disabled={isLoading || !topic}>
+                <button  className="w-full flex items-center justify-center bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-3 px-4 rounded-lg text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105 disabled:scale-100"  onClick={GenerateScript} disabled={isLoading || !topic}>
                     {isLoading ? <><div className="loading-spinner" aria-hidden="true"></div><span role="status">Generating...</span></> : <>✨ Generate Content</>}
                 </button>
 

@@ -8,8 +8,20 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ['lh3.googleusercontent.com']
-  }
+    domains: ['lh3.googleusercontent.com'],
+     remotePatterns: [
+        {
+          hostname: 'res.cloudinary.com',
+        }
+     ]
+  },
+ 
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '100mb',
+    },
+
+},
 };
 
 export default nextConfig;

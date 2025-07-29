@@ -8,7 +8,7 @@ import { AuthContext } from "./_context/AuthContext";
 import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 
-// Define a User type based on your Convex schema
+
 type AppUser = {
   name: string
   email: string
@@ -17,7 +17,7 @@ type AppUser = {
 };
 
 const Provider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<AppUser | null>(null); // Type explicitly
+  const [user, setUser] = useState<AppUser | null>(null);
 
   const CreateUser = useMutation(api.users.CreateNewUser);
 
@@ -29,7 +29,7 @@ const Provider = ({ children }: { children: React.ReactNode }) => {
          email: firebaseUser.email ?? "",
          pictureURL: firebaseUser.photoURL ?? "",    
         });
-        setUser(result); // Now result must match AppUser type
+        setUser(result); 
       } else {
         setUser(null);
       }
@@ -42,7 +42,7 @@ const Provider = ({ children }: { children: React.ReactNode }) => {
     <AuthContext.Provider value={{ user }}>
       <NextThemesProvider
         attribute="class"
-        defaultTheme="system"
+        defaultTheme="light"
         enableSystem
         disableTransitionOnChange
       >

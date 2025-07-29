@@ -1,4 +1,5 @@
 "use client"
+
 import { ConvexProvider, ConvexReactClient } from 'convex/react'
 import React from 'react'
 import Provider from './Provider';

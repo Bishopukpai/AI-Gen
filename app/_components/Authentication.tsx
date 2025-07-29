@@ -21,7 +21,7 @@ const Authentication: React.FC<{ children: React.ReactNode }> = ({ children })=>
             console.log(user)
             // IdP data available using getAdditionalUserInfo(result)
             // ...
-             router.push("/dashboard");
+             router.push("/create-video-script");
             }).catch((error) => {
                 // Handle Errors here.
                 const errorCode = error.code;
